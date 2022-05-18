@@ -1,4 +1,4 @@
-SELECT models.id, kategoris.name, 
+SELECT models.id, kategoris.name as kategori, 
       CONCAT(mereks.name,' ', jenis.name,' ', models.name) AS name 
       FROM models INNER JOIN jenis ON models.jenis_id = jenis.id 
                   INNER JOIN kategoris ON models.kategori_id = kategoris.id 
