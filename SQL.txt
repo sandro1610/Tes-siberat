@@ -1,0 +1,14 @@
+SELECT models.id, kategoris.name, 
+      CONCAT(mereks.name,' ', jenis.name,' ', models.name) AS name 
+      FROM models INNER JOIN jenis ON models.jenis_id = jenis.id 
+                  INNER JOIN kategoris ON models.kategori_id = kategoris.id 
+                  INNER JOIN mereks ON models.merek_id = mereks.id;
+
+SELECT * FROM models WHERE kategori_id = 1;
+
+
+SELECT * FROM models WHERE jenis_id = 4 AND merek_id = 2;
+
+
+SELECT * FROM models WHERE merek_id = 1 AND name LIKE %D%;
+
