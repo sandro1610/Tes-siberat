@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('content')
-{!! F::open(['action' =>'ContactController@store', 'method' => 'POST'])!!}
-    
+{!! F::open(['action' =>'App\Http\Controllers\KontakController@store', 'method' => 'POST'])!!}
+    @csrf
     <div class="col-md-6">
         
 			 <div class="form-group required">
@@ -26,5 +26,5 @@
         </div>
     </div>
  
-{!! Form::close() !!}
+{!! F::close() !!}
 @endsection

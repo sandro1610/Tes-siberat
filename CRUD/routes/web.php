@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\KontakController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,4 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::resource('contacts', ContactController::class);
-Route::resource('contacts','App\Http\Controllers\ContactController');
-
-Route::get('createContact', function () {
-    return view('create');
-});
+Route::resource('contacts', KontakController::class);

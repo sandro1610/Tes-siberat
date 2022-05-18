@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('content')
-    {!! F::open(['action' =>['ContactController@update',$data->id], 'method' => 'PUT'])!!}
-    
+    {!! F::open(['action' =>['App\Http\Controllers\KontakController@update',$data->id], 'method' => 'POST'])!!}
+    @csrf
+	@method('PUT')
         <div class="col-md-6">
 
-            
 			 <div class="form-group required">
 				{!! F::label("NAME") !!}
 				{!! F::text("name", $data->name ,["class"=>"form-control","required"=>"required"]) !!}
@@ -21,12 +21,10 @@
 				{!! F::text("phone", $data->phone ,["class"=>"form-control","required"=>"required"]) !!}
 			</div>
 
-
-
             <div class="well well-sm clearfix">
                 <button class="btn btn-success pull-right" title="Save" type="submit">Update</button>
             </div>
         </div>
         
-    {!! Form::close() !!}
+    {!! F::close() !!}
 @endsection
